@@ -21,7 +21,7 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
+      callbackURL: '/auth/google/callback', // relative path causes googe auth issues
       proxy: true // TODO: setup proxy in packages.json
     },
     async (acessToken, refreshToken, profile, done) => {

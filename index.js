@@ -16,11 +16,11 @@ app.get('/', (req, res) => {
   console.log('running');
 });
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // bodyParser required by passport
 app.use(
   cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey]
+    maxAge: 30 * 24 * 60 * 60 * 1000, // cookie expiry
+    keys: [keys.cookieKey] // cookie key: keep secret
   })
 );
 
