@@ -29,15 +29,14 @@ passport.use(
       const existingUser = await User.findOne({ googleID: profile.id });
       if (existingUser) {
         return done(null, existingUser);
-      } else {
-        // save user to DB
-        const user = await new User({
-          googleID: profile.id,
-          displayName: profile.name.givenName,
-          image: profile.url
-        }).save(); // dont forget to save!
-        done(null, user);
       }
+      // save user to DB
+      const user = await new User({
+        googleID: profile.id,
+        displayName: profile.name.givenName,
+        image: profile.url
+      }).save(); // dont forget to save!
+      done(null, user);
     }
   )
 );

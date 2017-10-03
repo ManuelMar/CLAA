@@ -28,10 +28,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app); // need app bc route is a funct
+require('./routes/billingRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
-//TODO: 1 setup auth model + routes -> done
-//TODO: install passport + define strategy + wire up -> done
-// TODO: integrate front end
+//TODO add donation routes
+//TODO add event creation and sharing -> how to make events common to everyone
