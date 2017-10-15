@@ -11,6 +11,9 @@ class Header extends Component {
       return <a href="/auth/google">Login with Google</a>;
     } else {
       return [
+        <li key="3" style={{ margin: '0 10px' }}>
+          Credits:{this.props.auth.credits}
+        </li>,
         <li key="1">
           <Payments />
         </li>,
