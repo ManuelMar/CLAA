@@ -6,19 +6,9 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'; // put actions into actions object
 
 import Header from './Header';
-//import Landing from './Landing';
-//import Dashboard from './Dashboard';
-//import EventNew from './events/EventNew';
-
-const Dashboard = () => {
-  return <h1>Dashboard</h1>;
-};
-const Landing = () => {
-  return <h1>Landing</h1>;
-};
-const EventNew = () => {
-  return <h1>Event New</h1>;
-};
+import Dashboard from './Dashboard';
+import Landing from './Landing';
+import EventNew from './Events/EventNew';
 
 //STYLE NOTE::
 //add classname container to top level div for materialze to space+ pad+ resize
@@ -31,7 +21,7 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div>
+          <div className="container">
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/events" component={Dashboard} />
