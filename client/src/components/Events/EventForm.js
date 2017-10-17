@@ -20,15 +20,10 @@ class EventForm extends Component {
     });
   }
 
-  // TODO handle form submit create action + reducer
-  // Import and persist form to db
-
-  // TODO figure out images
-
   render() {
     return (
       <div>
-        <form onSubmit={console.log('form submitted')}>
+        <form onSubmit={this.props.handleSubmit(this.props.onEventReview)}>
           {this.renderFields()}
           <Link to="/events">Cancel</Link>
           <button type="submit" className="right white-text teal btn-flat ">
