@@ -36,7 +36,20 @@ class EventForm extends Component {
   }
 }
 
+function validate(values) {
+  const errors = {};
+
+  _.each(eventFormFields, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = 'You must provide a value';
+    }
+  });
+
+  return errors;
+}
+
 export default reduxForm({
-  form: 'surveyForm',
+  validate,
+  form: 'eventForm',
   destroyOnUnmount: false
 })(EventForm);

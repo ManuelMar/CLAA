@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventForm from './EventForm';
 import EventReviewForm from './EventReviewForm';
+import { reduxForm } from 'redux-form';
 
 // TODO handle form submit create action + reducer
 // Import and persist form to db
@@ -43,5 +44,4 @@ class EventNew extends Component {
     );
   }
 }
-
-export default EventNew;
+export default reduxForm({ form: 'eventForm' })(EventNew);

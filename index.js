@@ -5,6 +5,7 @@ const passport = require('passport');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 require('./models/User');
+require('./models/Event');
 require('./services/passport');
 
 mongoose.Promise = global.Promise;
@@ -29,6 +30,7 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app); // need app bc route is a funct
 require('./routes/billingRoutes')(app);
+require('./routes/eventRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
